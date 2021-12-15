@@ -1,1 +1,1 @@
-Sitemap: https://vega.github.io/sitemap.xml
+Sitemap: /vega-lite/sitemap.xml

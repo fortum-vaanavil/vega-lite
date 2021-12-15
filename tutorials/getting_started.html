@@ -14,31 +14,29 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Vega-Lite - a high-level grammar for statistical graphics. Vega-Lite provides a higher-level grammar for visual analysis, comparable to ggplot or Tableau, that generates complete Vega specifications. Vega-Lite specifications consist of simple mappings of variables in a data set to visual encoding channels such as x, y, color, and size. These mappings are then translated into detailed visualization specifications in the form of Vega specification language. Vega-Lite produces default values for visualization components (e.g., scales, axes, and legends) in the output Vega specification using a rule-based approach, but users can explicit specify these properties to override default values." />
 <meta property="og:description" content="Vega-Lite - a high-level grammar for statistical graphics. Vega-Lite provides a higher-level grammar for visual analysis, comparable to ggplot or Tableau, that generates complete Vega specifications. Vega-Lite specifications consist of simple mappings of variables in a data set to visual encoding channels such as x, y, color, and size. These mappings are then translated into detailed visualization specifications in the form of Vega specification language. Vega-Lite produces default values for visualization components (e.g., scales, axes, and legends) in the output Vega specification using a rule-based approach, but users can explicit specify these properties to override default values." />
-<link rel="canonical" href="https://vega.github.io/tutorials/getting_started.html" />
-<meta property="og:url" content="https://vega.github.io/tutorials/getting_started.html" />
 <meta property="og:site_name" content="Vega-Lite" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Introduction to Vega-Lite" />
 <meta name="twitter:site" content="@vega_vis" />
 <script type="application/ld+json">
-{"headline":"Introduction to Vega-Lite","url":"https://vega.github.io/tutorials/getting_started.html","@type":"WebPage","description":"Vega-Lite - a high-level grammar for statistical graphics. Vega-Lite provides a higher-level grammar for visual analysis, comparable to ggplot or Tableau, that generates complete Vega specifications. Vega-Lite specifications consist of simple mappings of variables in a data set to visual encoding channels such as x, y, color, and size. These mappings are then translated into detailed visualization specifications in the form of Vega specification language. Vega-Lite produces default values for visualization components (e.g., scales, axes, and legends) in the output Vega specification using a rule-based approach, but users can explicit specify these properties to override default values.","@context":"https://schema.org"}</script>
+{"headline":"Introduction to Vega-Lite","url":"/vega-lite/tutorials/getting_started.html","@type":"WebPage","description":"Vega-Lite - a high-level grammar for statistical graphics. Vega-Lite provides a higher-level grammar for visual analysis, comparable to ggplot or Tableau, that generates complete Vega specifications. Vega-Lite specifications consist of simple mappings of variables in a data set to visual encoding channels such as x, y, color, and size. These mappings are then translated into detailed visualization specifications in the form of Vega specification language. Vega-Lite produces default values for visualization components (e.g., scales, axes, and legends) in the output Vega specification using a rule-based approach, but users can explicit specify these properties to override default values.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
     <script>
-      const BASEURL = window.location.origin + '';
+      const BASEURL = window.location.origin + '/vega-lite';
     </script>
 
-    <link rel="stylesheet" href="/static/github.css" />
+    <link rel="stylesheet" href="/vega-lite/static/github.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/octicons@4.4.0/build/font/octicons.min.css" />
-    <link rel="stylesheet" href="/static/main.css" />
+    <link rel="stylesheet" href="/vega-lite/static/main.css" />
   </head>
   <body>
     <div class="fill">
   <header>
     <nav class="page-centered">
       <div class="dropdown">
-        <a class="vl-title" href="/">Vega-Lite</a>
+        <a class="vl-title" href="/vega-lite/">Vega-Lite</a>
         <div class="dropdown-content">
           <a href="https://vega.github.io/vega/">Vega</a>
           <a href="https://altair-viz.github.io/">Altair</a>
@@ -46,11 +44,11 @@
       </div>
       <div class="vl-links">
         <div class="primary-links">
-          <a href="/examples/" >Examples</a>
-          <a href="/tutorials/getting_started.html" class="active">Tutorials</a>
-          <a href="/docs/" >Documentation</a>
-          <a href="/usage/embed.html" >Usage</a>
-          <a href="/ecosystem.html" >Ecosystem</a>
+          <a href="/vega-lite/examples/" >Examples</a>
+          <a href="/vega-lite/tutorials/getting_started.html" class="active">Tutorials</a>
+          <a href="/vega-lite/docs/" >Documentation</a>
+          <a href="/vega-lite/usage/embed.html" >Usage</a>
+          <a href="/vega-lite/ecosystem.html" >Ecosystem</a>
         </div>
         <div class="secondary-links">
           <a href="https://www.github.com/vega/vega-lite">GitHub</a>
@@ -67,19 +65,19 @@
   <nav class="page-centered">
     
     <a class="active"
-        href="/tutorials/getting_started.html" title="">Getting Started
+        href="/vega-lite/tutorials/getting_started.html" title="">Getting Started
     </a>
     
     <a 
-        href="/tutorials/explore.html" title="">Exploring Data
+        href="/vega-lite/tutorials/explore.html" title="">Exploring Data
     </a>
     
     <a 
-        href="/tutorials/figures.html" title="">Paper Figures
+        href="/vega-lite/tutorials/figures.html" title="">Paper Figures
     </a>
     
     <a 
-        href="/tutorials/streaming.html" title="">Streaming Data
+        href="/vega-lite/tutorials/streaming.html" title="">Streaming Data
     </a>
     
   </nav>
@@ -193,13 +191,13 @@
 }
 </code></pre>
 
-<p>The <a href="/docs/data.html"><code>data</code></a> property defines the data source of the visualization. In this example, we embed the data inline by directly setting <code>values</code> property. Vega-Lite also supports <a href="/docs/data.html">other types of data sources</a> besides inline data.</p>
+<p>The <a href="/vega-lite/docs/data.html"><code>data</code></a> property defines the data source of the visualization. In this example, we embed the data inline by directly setting <code>values</code> property. Vega-Lite also supports <a href="/vega-lite/docs/data.html">other types of data sources</a> besides inline data.</p>
 
 <h2 id="encoding-data-with-marks">Encoding Data with Marks</h2>
 
 <p>Now we have a data source but we haven’t defined yet how the data should be visualized.</p>
 
-<p>Basic graphical elements in Vega-Lite are <a href="/docs/mark.html"><em>marks</em></a>. Marks provide basic shapes whose properties (such as position, size, and color) can be used to visually encode data, either from a data field (or a variable), or a constant value.</p>
+<p>Basic graphical elements in Vega-Lite are <a href="/vega-lite/docs/mark.html"><em>marks</em></a>. Marks provide basic shapes whose properties (such as position, size, and color) can be used to visually encode data, either from a data field (or a variable), or a constant value.</p>
 
 <p>To show the data as a point, we can set the <code>mark</code> property to <code>point</code>.</p>
 
@@ -207,7 +205,7 @@
 
 <p>Now, it looks like we get a point. In fact, Vega-Lite renders one point for each object in the array, but they are all overlapping since we have not specified each point’s position.</p>
 
-<p>To visually separate the points, data variables can be mapped to visual properties of a mark. For example, we can <a href="/docs/encoding.html"><em>encode</em></a> the variable <code>a</code> of the data with <code>x</code> channel, which represents the x-position of the points. We can do that by adding an <code>encoding</code> object with its key <code>x</code> mapped to a channel definition that describes variable <code>a</code>.</p>
+<p>To visually separate the points, data variables can be mapped to visual properties of a mark. For example, we can <a href="/vega-lite/docs/encoding.html"><em>encode</em></a> the variable <code>a</code> of the data with <code>x</code> channel, which represents the x-position of the points. We can do that by adding an <code>encoding</code> object with its key <code>x</code> mapped to a channel definition that describes variable <code>a</code>.</p>
 
 <pre><code class="language-js">...
 "encoding": {
@@ -218,7 +216,7 @@
 
 <div class="vl-example" data-name="point_1d_array"></div>
 
-<p>The <a href="/docs/encoding.html"><code>encoding</code></a> object is a key-value mapping between encoding channels (such as <code>x</code>, <code>y</code>) and definitions of the mapped data fields. The channel definition describes the field’s name (<code>field</code>) and its <a href="/docs/encoding.html#type">data type</a> (<code>type</code>). In this example, we map the values for field <code>a</code> to the <em>encoding channel</em> <code>x</code> (the x-location of the points) and set <code>a</code>’s data type to <code>nominal</code>, since it represents categories. (See <a href="/docs/encoding.html#type">the documentation for more information about data types</a>.)</p>
+<p>The <a href="/vega-lite/docs/encoding.html"><code>encoding</code></a> object is a key-value mapping between encoding channels (such as <code>x</code>, <code>y</code>) and definitions of the mapped data fields. The channel definition describes the field’s name (<code>field</code>) and its <a href="/vega-lite/docs/encoding.html#type">data type</a> (<code>type</code>). In this example, we map the values for field <code>a</code> to the <em>encoding channel</em> <code>x</code> (the x-location of the points) and set <code>a</code>’s data type to <code>nominal</code>, since it represents categories. (See <a href="/vega-lite/docs/encoding.html#type">the documentation for more information about data types</a>.)</p>
 
 <p>In the visualization above, Vega-Lite automatically adds an axis with labels for the different categories as well as an axis title. However, 3 points in each category are still overlapping. So far, we have only defined a visual encoding for the field <code>a</code>. We can also map the field <code>b</code> to the <code>y</code> channel.</p>
 
@@ -329,18 +327,18 @@
 
 <p>In the JavaScript code, we create a variable <code>vlSpec</code> that holds the Vega-Lite specification in JSON format. The <code>vegaEmbed</code> method translates a Vega-Lite specification into a Vega specification and then calls the <a href="https://vega.github.io/vega/usage/">Vega Runtime</a> to display visualization in the container <code>&lt;div/&gt;</code> element.</p>
 
-<p>If viewed in a browser, this page displays our bar chart like on our <a href="/demo.html">demo page</a>. You can also fork our <a href="https://bl.ocks.org/domoritz/455e1c7872c4b38a58b90df0c3d7b1b9">Vega-Lite Block example</a>.</p>
+<p>If viewed in a browser, this page displays our bar chart like on our <a href="/vega-lite/demo.html">demo page</a>. You can also fork our <a href="https://bl.ocks.org/domoritz/455e1c7872c4b38a58b90df0c3d7b1b9">Vega-Lite Block example</a>.</p>
 
 <h2 id="next-steps">Next Steps</h2>
 
 <p>Now you can create a website that embeds a Vega-Lite specification. If you want to learn more about Vega-Lite, please feel free to:</p>
 
 <ul>
-  <li>Read the <a href="/tutorials/explore.html">next tutorial</a>.</li>
-  <li>See the <a href="/examples/">examples gallery</a>.</li>
+  <li>Read the <a href="/vega-lite/tutorials/explore.html">next tutorial</a>.</li>
+  <li>See the <a href="/vega-lite/examples/">examples gallery</a>.</li>
   <li>Build your own visualizations in the <a href="https://vega.github.io/editor/#/custom/vega-lite">online editor</a>.</li>
-  <li>Browse through the <a href="/docs/">documentation</a>.</li>
-  <li>See the <a href="/ecosystem.html">list of applications</a> that you can use Vega-Lite with.</li>
+  <li>Browse through the <a href="/vega-lite/docs/">documentation</a>.</li>
+  <li>See the <a href="/vega-lite/ecosystem.html">list of applications</a> that you can use Vega-Lite with.</li>
 </ul>
 
 
@@ -356,11 +354,11 @@
       <a href="https://github.com/vega/vega-lite/edit/master/site/tutorials/getting_started.md">Edit this page</a> and submit a pull request!
     </span>
 
-    <a href="http://idl.cs.washington.edu" title="UW Interactive Data Lab" class="idl-logo"><img src="/static/idl-logo.png"/></a>
+    <a href="http://idl.cs.washington.edu" title="UW Interactive Data Lab" class="idl-logo"><img src="/vega-lite/static/idl-logo.png"/></a>
   </div>
 </footer>
 
-    <script src="/static/bundle.js"></script>
+    <script src="/vega-lite/static/bundle.js"></script>
     <script>
       // Google Analytics
       (function(i, s, o, g, r, a, m) {
