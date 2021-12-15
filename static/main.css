@@ -324,7 +324,6 @@ nav > .dropdown {
 
 .vl-title {
   padding: 0 20px 2px 20px;
-  width: 124px;
   font-weight: bold;
   font-size: 1.4em;
   color: #eee;
@@ -579,10 +578,6 @@ footer .edit-page {
   text-align: left;
 }
 
-.example .vega-bind select {
-  max-width: 180px;
-}
-
 .example .vega-bind-name {
   display: inline-block;
   min-width: 150px;
@@ -693,7 +688,7 @@ footer .edit-page {
 nav .dropdown-content {
   position: absolute;
   display: none;
-  min-width: 164px;
+  min-width: 141px;
   top: 54px; /* For Firefox */
 }
 

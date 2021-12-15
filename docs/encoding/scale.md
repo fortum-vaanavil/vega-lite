@@ -373,7 +373,7 @@ In addition, `bins` property can be used to specify bin boundaries over the scal
 
 #### Bins Parameter
 
-The bin specification object for the scale `bins` properties support the following properties:
+The bin specification object for the scale `bins` properties support the following parameters:
 
 {% include table.html props="bins" source="ScaleBinParams" %}
 
@@ -444,7 +444,7 @@ To provide themes for all scales, the scale config (`config: {scale: {...}}`) ca
 
 #### Padding
 
-{% include table.html props="bandPaddingInner,barBandPaddingInner,rectBandPaddingInner,bandWithNestedOffsetPaddingInner,offsetBandPaddingInner,bandPaddingOuter,bandWithNestedOffsetPaddingOuter,offsetBandPaddingOuter,continuousPadding,pointPadding" source="ScaleConfig" %}
+{% include table.html props="bandPaddingInner,barBandPaddingInner,rectBandPaddingInner,bandPaddingOuter,continuousPadding,pointPadding" source="ScaleConfig" %}
 
 #### Range
 

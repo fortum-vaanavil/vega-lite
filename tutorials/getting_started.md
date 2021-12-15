@@ -95,7 +95,7 @@ To visually separate the points, data variables can be mapped to visual properti
 
 <div class="vl-example" data-name="point_1d_array"></div>
 
-The [`encoding`]({{site.baseurl}}/docs/encoding.html) object is a key-value mapping between encoding channels (such as `x`, `y`) and definitions of the mapped data fields. The channel definition describes the field's name (`field`) and its [data type]({{site.baseurl}}/docs/type.html) (`type`). In this example, we map the values for field `a` to the _encoding channel_ `x` (the x-location of the points) and set `a`'s data type to `nominal`, since it represents categories. (See [the documentation for more information about data types]({{site.baseurl}}/docs/type.html).)
+The [`encoding`]({{site.baseurl}}/docs/encoding.html) object is a key-value mapping between encoding channels (such as `x`, `y`) and definitions of the mapped data fields. The channel definition describes the field's name (`field`) and its [data type]({{site.baseurl}}/docs/encoding.html#type) (`type`). In this example, we map the values for field `a` to the _encoding channel_ `x` (the x-location of the points) and set `a`'s data type to `nominal`, since it represents categories. (See [the documentation for more information about data types]({{site.baseurl}}/docs/encoding.html#type).)
 
 In the visualization above, Vega-Lite automatically adds an axis with labels for the different categories as well as an axis title. However, 3 points in each category are still overlapping. So far, we have only defined a visual encoding for the field `a`. We can also map the field `b` to the `y` channel.
 
@@ -172,7 +172,7 @@ You can use [Vega-Embed](https://github.com/vega/vega-embed) to embed your Vega-
     <script>
       // Assign the specification to a local variable vlSpec.
       var vlSpec = {
-        $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+        $schema: 'https://vega.github.io/schema/vega-lite/v4.json',
         data: {
           values: [
             {a: 'C', b: 2},

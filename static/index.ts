@@ -31,7 +31,7 @@ hljs.registerLanguage('css', css);
 hljs.registerLanguage('diff', diff);
 
 // highlight jekyll code blocks
-hljs.highlightAll();
+hljs.initHighlightingOnLoad();
 
 declare const BASEURL: string;
 
@@ -45,7 +45,7 @@ const editorURL = 'https://vega.github.io/editor/';
 selectAll('h2, h3, h4, h5, h6').each(function (this: d3.BaseType) {
   const sel = select(this);
   const name = sel.attr('id');
-  const title = sel.html();
+  const title = sel.text();
   sel.html(`<a href="#${name}" class="anchor"><span class="octicon octicon-link"></span></a>${title.trim()}`);
 });
 
@@ -66,7 +66,7 @@ function renderExample($target: Selection<any, any, any, any>, specText: string,
       .append('code')
       .attr('class', 'json')
       .text(textClean);
-    hljs.highlightElement(code.node());
+    hljs.highlightBlock(code.node() as any);
   }
 
   const spec = JSON.parse(specText);
@@ -93,7 +93,7 @@ export function embedExample($target: any, spec: TopLevelSpec, actions = true, t
       .append('a')
       .text('Open in Vega Editor')
       .attr('href', '#')
-      .on('click', event => {
+      .on('click', function (event) {
         post(window, editorURL, {
           mode: 'vega-lite',
           spec: compactStringify(spec),
@@ -114,7 +114,7 @@ function getSpec(el: d3.BaseType) {
   const figureOnly = !!sel.attr('figure-only');
   if (name) {
     const dir = sel.attr('data-dir');
-    const fullUrl = `${BASEURL}/examples/${dir ? `${dir}/` : ''}${name}.vl.json`;
+    const fullUrl = BASEURL + '/examples/' + (dir ? dir + '/' : '') + name + '.vl.json';
 
     fetch(fullUrl)
       .then(response => {
@@ -138,16 +138,16 @@ window['changeSpec'] = (elId: string, newSpec: string) => {
 };
 
 window['buildSpecOpts'] = (id: string, baseName: string) => {
-  const oldName = select(`#${id}`).attr('data-name');
-  const prefixSel = select(`select[name=${id}]`);
-  const inputsSel = selectAll(`input[name=${id}]:checked`);
+  const oldName = select('#' + id).attr('data-name');
+  const prefixSel = select('select[name=' + id + ']');
+  const inputsSel = selectAll('input[name=' + id + ']:checked');
   const prefix = prefixSel.empty() ? id : prefixSel.property('value');
   const values = inputsSel
     .nodes()
     .map((n: any) => n.value)
     .sort()
     .join('_');
-  const newName = baseName + prefix + (values ? `_${values}` : '');
+  const newName = baseName + prefix + (values ? '_' + values : '');
   if (oldName !== newName) {
     window['changeSpec'](id, newName);
   }

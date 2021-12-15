@@ -43,7 +43,7 @@ Below is the JavaScript code to run this example. Make sure your html contains a
 
 ```js
 var vlSpec = {
-  $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+  $schema: 'https://vega.github.io/schema/vega-lite/v4.json',
   data: {name: 'table'},
   width: 400,
   mark: 'line',
@@ -90,8 +90,6 @@ vegaEmbed('#chart', vlSpec).then(function (res) {
   }, 1000);
 });
 ```
-
-New data may change the layout but Vega does not always resize the chart. Because of this optimization, your axes may be clipped off for example. To resolve this issue, you need to configure [autosize](https://vega.github.io/vega-lite/docs/size.html#autosize) or explicitly use [view.resize](https://vega.github.io/vega/docs/api/view/#view_resize) to resize when the data updates.
 
 This is the end of this tutorial where you learned how to stream new data into your chart. If you want to use Vega-Lite with websockets, check out the [Vega-Lite with websockets](https://bl.ocks.org/domoritz/8e1e4da185e1a32c7e54934732a8d3d5) demo. You can find more visualizations in the [gallery]({{site.baseurl}}/examples/). If you want to further customize your charts, please read the [documentation]({{site.baseurl}}/docs/).
 

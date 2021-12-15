@@ -24,7 +24,6 @@ permalink: /docs/config.html
     "concat"    : { ... }    // - Concat Configuration
     "facet"     : { ... }    // - Facet Configuration
     "repeat"    : { ... }    // - Repeat Configuration
-    "locale"    : { ... }    // - Locale Configuration
     "aria"      : ...        // - Aria Configuration
   }
 }
@@ -58,7 +57,7 @@ These two config properties define the default number and time formats for text 
 
 ### Providing Custom Formatters
 
-To customize how Vega-Lite formats numbers or text, you can register a new formatter by (1) registering [an expression function](https://vega.github.io/vega/docs/api/extensibility/#expressions) that takes a data point and an optional format property and (2) setting the `customFormatTypes` config to `true`. For example, to register `customFormatA`, you run need to register the function:
+To customize how Vega-Lite formats numbers or text, you can register a new formatter by (1) registering [an expression function](https://vega.github.io/vega/docs/api/extensibility/#expressions) that takes a data point and an optional format parameter and (2) setting the `customFormatTypes` config to `true`. For example, to register `customFormatA`, you run need to register the function:
 
 ```js
 vega.expressionFunction('customFormatA', function(datum, params) {
@@ -165,10 +164,6 @@ Each of the view composition configurations (`concat` and `facet`) supports the 
 Repeat uses the same configuration as concatenation.
 
 {:#aria-config}
-
-## Locale Configuration
-
-{% include table.html props="locale" source="Config" %}
 
 ## ARIA Configuration
 

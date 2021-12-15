@@ -112,7 +112,7 @@ Here we create stroked points by setting their `\"filled\"` to `false` and their
 
 <span class="vl-example" data-name="line_overlay_stroked"></span>
 
-{:#line-invalid}
+{:#line-detail}
 
 ### Line Chart with Invalid Values
 
