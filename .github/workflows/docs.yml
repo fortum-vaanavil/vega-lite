@@ -1,0 +1,54 @@
+name: Docs
+
+on:
+  push:
+    branches:
+      - v4_17_0
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install Node dependencies
+        run: yarn --frozen-lockfile
+
+      - name: Build
+        run: yarn build
+
+      # - name: Setup Git remote
+      #   run: ./scripts/setup-git-ci.sh
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Add schema repo
+        run: |
+          pushd ..
+          git clone https://github.com/vega/schema.git
+          popd
+
+      # - name: Check NPM deployment
+      #   run: ./scripts/check-npm.sh
+
+      - uses: actions/setup-node@v1
+        with:
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Prebuild website
+        run: yarn predeploy:site
+
+      # - name: Publish website
+      #   uses: alex-page/blazing-fast-gh-pages-deploy@v1.1.0
+      #   with:
+      #     repo-token: ${{ secrets.GH_PAT }}
+      #     site-directory: 'site/'
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.7
+        with:
+          branch: gh-pages # The branch the action should deploy to.
+          folder: site # The folder the action should deploy.
+      # - name: Publish schema
+      #   run: ./scripts/deploy-schema.sh

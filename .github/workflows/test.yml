@@ -1,9 +1,8 @@
 name: Test
 
 on:
-  push:
-    branches:
-      - '**'
+  release:
+    types: [published]
 
 jobs:
   test-matrix:

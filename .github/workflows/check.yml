@@ -1,9 +1,8 @@
 name: Check
 
 on:
-  push:
-    branches:
-      - '**'
+  release:
+    types: [published]
 
 jobs:
   check:
